@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "tslint-react",
+    "tslint-config-airbnb"
+  ],
+  "rules": {
+    "import-name": [
+      true,
+      {
+        "react": "React",
+        "link": "Link"
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
 export default () => {
   const curTime = new Date();
@@ -11,4 +11,4 @@ export default () => {
       <div><Link href="/page2"><a>Page2</a></Link></div>
     </div>
   );
-}
+};
