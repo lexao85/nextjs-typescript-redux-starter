@@ -17,8 +17,15 @@
   "author": "Oleksii Oliinyk",
   "license": "MIT",
   "dependencies": {
+    "@zeit/next-typescript": "^1.1.0",
     "next": "^6.1.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
+  },
+  "devDependencies": {
+    "@types/next": "^6.1.4",
+    "@types/react": "^16.4.13",
+    "fork-ts-checker-webpack-plugin": "^0.4.9",
+    "typescript": "^3.0.3"
   }
 }
