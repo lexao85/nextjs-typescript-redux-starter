@@ -9,6 +9,9 @@ export default class MyDocument extends Document {
   public render() {
     return (
       <html lang="en">
+        <Head>
+          <link rel="manifest" href="/static/manifest.json" />
+        </Head>
         <Head key="viewport">
           <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
         </Head>
