@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next src",
-    "build": "next build src",
-    "start": "next start src",
+    "dev": "npm run build && node src/.next/production-server/index.js",
+    "build": "next build src && tsc --project tsconfig.server.json",
+    "start": "NODE_ENV=production node src/.next/production-server/index.js",
     "lint": "tslint -c tslint.json 'src/**/*.ts*'"
   },
   "keywords": [
@@ -19,11 +19,15 @@
   "license": "MIT",
   "dependencies": {
     "@zeit/next-typescript": "^1.1.0",
+    "compression": "^1.7.3",
+    "express": "^4.16.3",
     "next": "^6.1.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
   },
   "devDependencies": {
+    "@types/compression": "0.0.36",
+    "@types/express": "^4.16.0",
     "@types/next": "^6.1.4",
     "@types/react": "^16.4.13",
     "fork-ts-checker-webpack-plugin": "^0.4.9",
