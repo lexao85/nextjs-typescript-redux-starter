@@ -1,1 +1,13 @@
-export default () => <div>Welcome to page2...</div>;
+import Head from 'next/head';
+import React from 'react';
+
+export default () => (
+  <>
+    <Head key="title">
+      <title>Page1</title>
+    </Head>
+    <div>
+      Welcome to page2...
+    </div>
+  </>
+);
