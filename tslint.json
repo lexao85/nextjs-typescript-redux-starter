@@ -8,6 +8,7 @@
       true,
       {
         "react": "React",
+        "app": "App",
         "head": "Head",
         "link": "Link",
         "document": "Document"
