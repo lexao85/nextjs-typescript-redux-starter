@@ -1,0 +1,22 @@
+@import 'basic.scss';
+
+// https://codepen.io/peterxjang/pen/xYZWGz?editors=1100
+
+/* FLEXBOX-BASED LAYOUT */
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  flex: 1;
+}
+main {
+  flex: 1;
+  padding: 0 20px;
+}
+aside {
+  flex: 0 0 190px;
+  padding: 0 10px;
+}

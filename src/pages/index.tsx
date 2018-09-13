@@ -4,20 +4,31 @@ import React from 'react';
 import ProductList from '../containers/ProductList';
 import CartInfo from '../containers/CartInfo';
 
+import cartInfoScss from '../styles/cartInfo.scss';
+
 export default () => {
   return (
-    <div>
+    <>
       <Head key="title">
         <title>Main</title>
       </Head>
-      <div style={{ width: '100%', display: 'inline-block' }}>
-        <Link href="/cart" as="/cart">
-          <div style={{ float: 'right', cursor: 'pointer', pointerEvents: 'all' }}>
-            <CartInfo />
-          </div>
-        </Link>
+      <Head key="cart_info">
+        <style dangerouslySetInnerHTML={{ __html: cartInfoScss }} />
+      </Head>
+      <header>Buy products</header>
+      <div className="container">
+        <main>
+          <ProductList />
+        </main>
+        <aside>
+          <Link href="/cart" as="/cart">
+            <div className="cartInfo" style={{ cursor: 'pointer', pointerEvents: 'all' }}>
+              <CartInfo />
+            </div>
+          </Link>
+        </aside>
       </div>
-      <ProductList />
-    </div>
+      <footer>{`©${new Date().getFullYear()}`}</footer>
+    </>
   );
 };

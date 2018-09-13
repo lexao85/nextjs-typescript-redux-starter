@@ -11,7 +11,7 @@ interface IStateProps {
 // tslint:disable-next-line:function-name
 function CartInfo(props: IStateProps) {
   return (
-    <div>
+    <div style={{ padding: 5, pointerEvents: 'none' }} >
       <div>{`Elements in cart: ${props.totalCount}`}</div>
       <div>{`Total price: ${props.currency}${props.totalPrice.toFixed(2)}`}</div>
     </div>

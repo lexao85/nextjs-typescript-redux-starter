@@ -9,14 +9,16 @@ export default () => (
     <Head key="title">
       <title>Edit your cart</title>
     </Head>
-    <div><Link href="/" as="/"><a>Go to main</a></Link></div>
-    <div style={{ width: '100%', display: 'inline-block' }}>
-      <div style={{ float: 'right', cursor: 'pointer', pointerEvents: 'all' }}>
+    <header>Edit cart</header>
+    <div className="container">
+      <main>
+        <div><Link href="/" as="/"><a>Go to main</a></Link></div>
+        <Cart />
+      </main>
+      <aside>
         <CartInfo />
-      </div>
+      </aside>
     </div>
-    <div>
-      <Cart />
-    </div>
+    <footer>{`©${new Date().getFullYear()}`}</footer>
   </>
 );
