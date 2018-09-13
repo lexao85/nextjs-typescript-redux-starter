@@ -2,6 +2,7 @@ const path = require("path");
 const glob = require("glob");
 const withTypescript = require("@zeit/next-typescript")
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const svgStore = require("webpack-svgstore-plugin");
 
 module.exports = withTypescript({
   webpack(config, options) {
@@ -11,6 +12,13 @@ module.exports = withTypescript({
         tsconfig: path.resolve(__dirname, './tsconfig.json')
       }))
     }
+
+    config.plugins.push(
+      new svgStore({
+        prefix: "",
+        svgoOptions: {},
+      })
+    );
 
     config.module.rules.push(
       {

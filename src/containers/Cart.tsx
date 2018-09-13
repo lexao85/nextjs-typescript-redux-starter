@@ -39,13 +39,17 @@ function Cart(props: IProductListProps) {
           {`${props.currency}${item.totalPrice.toFixed(2)}`}
         </div>
         <div style={{ width: '20%', flexGrow: 1 }}>
-          <button onClick={props.onRemoveItem(index)} style={{ cursor: 'pointer' }}>Remove</button>
+          <button title="Remove" onClick={props.onRemoveItem(index)} style={{ cursor: 'pointer' }}>
+            <svg className="svg-icon">
+              <use xlinkHref="#remove" />
+            </svg>
+          </button>
         </div>
       </React.Fragment>
     );
   });
   return (
-    <div style={{ flexWrap: 'wrap', display: 'flex', padding: 0, margin: 0 }}>
+    <div style={{ flexWrap: 'wrap', alignItems: 'center', display: 'flex', padding: 0, margin: 0 }}>
       <div style={{ width: '20%', flexGrow: 1 }}><b>Product</b></div>
       <div style={{ width: '20%', flexGrow: 1 }}><b>Count</b></div>
       <div style={{ width: '20%', flexGrow: 1 }}><b>Price</b></div>
@@ -59,7 +63,11 @@ function Cart(props: IProductListProps) {
         <b>{`${props.currency}${props.totalPrice.toFixed(2)}`}</b>
       </div>
       <div style={{ width: '20%', flexGrow: 1 }}>
-        <button onClick={props.onRemoveAll} style={{ cursor: 'pointer' }}>Remove All</button>
+        <button title="Remove All" onClick={props.onRemoveAll} style={{ cursor: 'pointer' }}>
+          <svg className="svg-icon">
+            <use xlinkHref="#remove-all" />
+          </svg>
+        </button>
       </div>
     </div>
   );

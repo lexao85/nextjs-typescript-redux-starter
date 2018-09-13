@@ -11,7 +11,8 @@
         "app": "App",
         "head": "Head",
         "link": "Link",
-        "document": "Document"
+        "document": "Document",
+        "isomorphicUnfetch": "fetch"
       }
     ]
   }

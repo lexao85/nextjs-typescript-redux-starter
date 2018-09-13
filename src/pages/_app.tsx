@@ -9,6 +9,10 @@ const makeStore = (initialState: IStore) => {
   return initializeStore(initialState);
 };
 
+// tslint:disable-next-line:variable-name
+const __svg__ = { path: '../static/assets/**/*.svg', name: 'static/sprite/svg-sprite.svg' };
+__svg__;
+
 class MyApp extends App {
   public static async getInitialProps(initialProps: any) {
 

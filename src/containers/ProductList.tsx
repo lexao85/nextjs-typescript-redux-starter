@@ -24,13 +24,17 @@ function ProductList(props: IProductListProps) {
         <div style={{ width: '30%', flexGrow: 1 }}>{product.name}</div>
         <div style={{ width: '45%', flexGrow: 1 }}>{`${props.currency}${product.price}`}</div>
         <div style={{ width: '25%', flexGrow: 1 }}>
-          <button onClick={props.onBuy(product)} style={{ cursor: 'pointer' }}>Buy</button>
+          <button title="Buy" onClick={props.onBuy(product)} style={{ cursor: 'pointer' }}>
+            <svg className="svg-icon">
+              <use xlinkHref="#buy" />
+            </svg>
+          </button>
         </div>
       </React.Fragment>
     );
   });
   return (
-    <div style={{ flexWrap: 'wrap', display: 'flex', padding: 0, margin: 0 }}>
+    <div style={{ flexWrap: 'wrap', display: 'flex', alignItems: 'center', padding: 0, margin: 0 }}>
       <div style={{ width: '30%', flexGrow: 1 }}><b>Product</b></div>
       <div style={{ width: '45%', flexGrow: 1 }}><b>Price</b></div>
       <div style={{ width: '25%', flexGrow: 1 }} />
