@@ -1,5 +1,5 @@
-# nextjs-ts-redux-starter
-Simple starter project to develop universal web application based on [Next.js](https://github.com/zeit/next.js/). 
+# Next.JS + TypeScript + Redux + SCSS Boilerplate
+Simple starter project to develop universal web application based on [Next.js](https://github.com/zeit/next.js/) written with TypeScript. 
 
 # How to use
 
