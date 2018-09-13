@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
+import ProductList from '../containers/ProductList';
 
 export default () => {
   const curTime = new Date();
@@ -13,6 +14,7 @@ export default () => {
       <div>{helloString}</div>
       <div><Link href="/page1" as="/page1"><a>Page1</a></Link></div>
       <div><Link href="/page2" as="/page2"><a>Page2</a></Link></div>
+      <ProductList />
     </div>
   );
 };
