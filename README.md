@@ -1,6 +1,9 @@
 # Next.JS + TypeScript + Redux + SCSS Boilerplate
 Simple starter project to develop universal web application based on [Next.js](https://github.com/zeit/next.js/) written with TypeScript. 
 
+## Demo
+Online demo: https://nextjs-ts-starter.herokuapp.com/
+
 ## Contents
 
 - [Installation](#installation)
