@@ -1,0 +1,7 @@
+{
+  "watch": ["server/**/*.ts"],
+  "execMap": {
+    "ts": "ts-node --compilerOptions {\"\"\"module\"\"\":\"\"\"commonjs\"\"\"}"
+  },
+  "ext": "ts, tsx, scss, svg, css"
+}

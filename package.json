@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server/index.ts 0.0.0.0 3000",
+    "dev:win": "nodemon --config nodemon.win.json src/server/index.ts 0.0.0.0 3000",
     "build": "next build src && tsc --project tsconfig.server.json",
-    "start": "NODE_ENV=production node src/.next/production-server/index.js",
+    "start": "cross-env NODE_ENV=production node src/.next/production-server/index.js",
     "lint": "tslint -c tslint.json 'src/**/*.ts*'"
   },
   "keywords": [
@@ -49,6 +50,7 @@
     "@types/react": "^16.4.13",
     "@types/react-redux": "^6.0.8",
     "@types/spdy": "^3.4.4",
+    "cross-env": "^5.2.0",
     "fork-ts-checker-webpack-plugin": "^0.4.9",
     "nodemon": "^1.18.4",
     "ts-node": "^7.0.1",
