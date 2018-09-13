@@ -1,7 +1,7 @@
 # Next.JS + TypeScript + Redux + SCSS Boilerplate
 Simple starter project to develop universal web application based on [Next.js](https://github.com/zeit/next.js/) written with TypeScript. 
 
-# Contents
+## Contents
 
 - [Installation](#installation)
 - [Development](#development)
@@ -9,7 +9,7 @@ Simple starter project to develop universal web application based on [Next.js](h
 - [Other scripts](#other-scripts)
 - [Features](#features)
 
-## Installation
+### Installation
 Clone repo: 
 ```sh
 git clone https://github.com/lexao85/nextjs-ts-redux-starter.git
@@ -21,7 +21,7 @@ Install the dependencies:
 npm install
 ```
 
-## Development
+### Development
 Start a live-reload development server:
 ```sh
 npm run dev
@@ -31,7 +31,7 @@ or on Windows:
 npm run dev:win
 ```
 
-## Production
+### Production
 Generate a production build:
 ```sh
 npm run build
@@ -41,10 +41,10 @@ Run a production build:
 npm run start
 ```
 
-## Other scripts
+### Other scripts
 - `npm run lint`: Lint TypeScript files with TSLint.
 
-# Features
+### Features
 - Next JS => SSR
 - TypeScript
 - Redux
@@ -52,5 +52,5 @@ npm run start
 - SCSS + hot reloading
 - SVG Sprite
 
-# License
+## License
 MIT
