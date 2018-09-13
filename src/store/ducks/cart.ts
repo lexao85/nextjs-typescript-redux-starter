@@ -5,14 +5,19 @@ import { Product } from './app';
 export interface CartItem {
   product: Product;
   count: number;
+  totalPrice: number;
 }
 
 export interface CartState {
   items: CartItem[];
+  totalPrice: number;
+  totalCount: number;
 }
 
 const initialState: CartState = {
   items: [],
+  totalPrice: 0,
+  totalCount: 0,
 };
 
 // Actions
@@ -49,19 +54,30 @@ export default function reducer(state: CartState = initialState, action: ActionT
 
     case TypeKeys.REMOVE_ITEM: {
       const items = [...state.items];
-      items.splice(action.index, 1);
-      return { ...state, items };
+      const removedItem = items.splice(action.index, 1);
+      return {
+        ...state,
+        items,
+        totalPrice: state.totalPrice - removedItem[0].product.price,
+        totalCount: state.totalCount - removedItem[0].count,
+      };
     }
 
     case TypeKeys.ADD_ITEM: {
       const items = [...state.items];
       const existedItem = items.find(el => el.product.id === action.product.id);
       if (existedItem) {
-        existedItem.count = existedItem.count + 1;
+        existedItem.count += 1;
+        existedItem.totalPrice += existedItem.product.price;
       } else {
-        items.push({ product: action.product, count: 1 });
+        items.push({ product: action.product, count: 1, totalPrice: action.product.price });
       }
-      return { ...state, items };
+      return {
+        ...state,
+        items,
+        totalPrice: state.totalPrice + action.product.price,
+        totalCount: state.totalCount + 1,
+      };
     }
 
     default: {

@@ -17,7 +17,7 @@ interface IDispatchProps {
 type IProductListProps = IStateProps & IDispatchProps;
 
 // tslint:disable-next-line:function-name
-export function ProductList(props: IProductListProps) {
+function ProductList(props: IProductListProps) {
   const products = props.productList.map((product) => {
     return (
       <React.Fragment key={product.id}>

@@ -10,8 +10,10 @@ export default (dev: boolean): IServerConfig => {
   return {
     certificateSettings: { crtPath, keyPath },
     useTextCompression: !dev,
-    cacheMap: {
-      '/': '/',
-    },
+    cacheMap:
+      dev ? undefined
+        : {
+          '/': '/',
+        },
   };
 };
