@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server/index.ts 0.0.0.0 3000",
+    "dev:win": "nodemon --config nodemon.win.json src/server/index.ts 0.0.0.0 3000",
     "build": "next build src && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node src/.next/production-server/index.js",
     "lint": "tslint -c tslint.json 'src/**/*.ts*'"
