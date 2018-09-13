@@ -7,6 +7,10 @@ interface IServerConfig {
 export default (dev: boolean): IServerConfig => {
   const crtPath = dev ? `${__dirname}/../../server.crt` : `${__dirname}/../../../server.crt`;
   const keyPath = dev ? `${__dirname}/../../server.key` : `${__dirname}/../../../server.key`;
+  const isHeroku = (process.env.NODE && ~process.env.NODE.indexOf('heroku'));
+  if (isHeroku) {
+    return {};
+  }
   return {
     certificateSettings: { crtPath, keyPath },
     useTextCompression: !dev,

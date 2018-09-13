@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/server/index.ts 0.0.0.0 3000",
+    "postinstall": "npm run build",
+    "dev": "cross-env PORT=5000 nodemon src/server/index.ts 0.0.0.0 5000",
     "dev:win": "nodemon --config nodemon.win.json src/server/index.ts 0.0.0.0 3000",
     "build": "next build src && tsc --project tsconfig.server.json",
     "start": "cross-env NODE_ENV=production node src/.next/production-server/index.js",
