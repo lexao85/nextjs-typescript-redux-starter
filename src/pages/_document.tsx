@@ -7,8 +7,9 @@ export default class MyDocument extends Document {
   public static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+    const protocol = process.env.CONNECTION_TYPE === 'https' ? 'https' : 'http';
     const port = parseInt(process.env.PORT, 10) || 3000;
-    const res = await fetch(`https://localhost:${port}/_next/static/sprite/svg-sprite.svg`);
+    const res = await fetch(`${protocol}://localhost:${port}/_next/static/sprite/svg-sprite.svg`);
     const contents = await res.text();
     initialProps.svgSprite = contents;
     return { ...initialProps };

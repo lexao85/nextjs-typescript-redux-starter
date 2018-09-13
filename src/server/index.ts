@@ -45,6 +45,7 @@ app.prepare()
     });
 
     if (config.certificateSettings) {
+      process.env.CONNECTION_TYPE = 'https';
       const { crtPath, keyPath } = config.certificateSettings;
       spdy.createServer(
         {
