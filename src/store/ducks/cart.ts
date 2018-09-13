@@ -49,16 +49,15 @@ export type ActionTypes = AddItemAction | RemoveItemAction | ClearCartAction;
 export default function reducer(state: CartState = initialState, action: ActionTypes): CartState {
   switch (action.type) {
     case TypeKeys.CLEAR_CART: {
-      return { ...state, items: [] };
+      return { items: [], totalCount: 0, totalPrice: 0 };
     }
 
     case TypeKeys.REMOVE_ITEM: {
       const items = [...state.items];
       const removedItem = items.splice(action.index, 1);
       return {
-        ...state,
         items,
-        totalPrice: state.totalPrice - removedItem[0].product.price,
+        totalPrice: state.totalPrice - removedItem[0].totalPrice,
         totalCount: state.totalCount - removedItem[0].count,
       };
     }
@@ -73,7 +72,6 @@ export default function reducer(state: CartState = initialState, action: ActionT
         items.push({ product: action.product, count: 1, totalPrice: action.product.price });
       }
       return {
-        ...state,
         items,
         totalPrice: state.totalPrice + action.product.price,
         totalCount: state.totalCount + 1,
