@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "npm run build",
-    "dev": "cross-env PORT=5000 nodemon src/server/index.ts 0.0.0.0 5000",
-    "dev:win": "nodemon --config nodemon.win.json src/server/index.ts 0.0.0.0 3000",
+    "dev": "cross-env PORT=5000 nodemon src/server/index.ts",
+    "dev:win": "nodemon --config nodemon.win.json src/server/index.ts",
     "build": "next build src && tsc --project tsconfig.server.json",
     "start": "cross-env NODE_ENV=production node src/.next/production-server/index.js",
     "lint": "tslint -c tslint.json 'src/**/*.ts*'"
