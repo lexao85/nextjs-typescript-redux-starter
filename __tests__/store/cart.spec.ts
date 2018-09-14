@@ -4,7 +4,7 @@ import cart, {
 } from './../../src/store/ducks/cart';
 import reduxMockStore, { MockStoreCreator } from 'redux-mock-store';
 
-describe('>>>R E D U C E R --- Test core reducers', () => {
+describe('>>>R E D U C E R --- Test cart reducer', () => {
   let initialState: CartState;
   let testProduct: Product;
   let expectedState: CartState;
