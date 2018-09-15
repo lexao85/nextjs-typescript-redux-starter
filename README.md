@@ -45,7 +45,8 @@ npm run start
 ```
 
 ### Other scripts
-- `npm run lint`: Lint TypeScript files with TSLint.
+- `npm run lint`: Lint TypeScript files with TSLint.  
+- `npm test`: run unit tests  
 
 ### Features
 - Next JS => SSR
