@@ -12,7 +12,8 @@
         "head": "Head",
         "link": "Link",
         "document": "Document",
-        "isomorphicUnfetch": "fetch"
+        "isomorphicUnfetch": "fetch",
+        "reactTestRenderer": "renderer"
       }
     ]
   }
