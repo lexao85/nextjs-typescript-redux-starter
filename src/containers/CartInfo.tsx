@@ -9,7 +9,7 @@ interface IStateProps {
 }
 
 // tslint:disable-next-line:function-name
-function CartInfo(props: IStateProps) {
+export function CartInfo(props: IStateProps) {
   return (
     <div style={{ padding: 5, pointerEvents: 'none' }} >
       <div>{`Elements in cart: ${props.totalCount}`}</div>

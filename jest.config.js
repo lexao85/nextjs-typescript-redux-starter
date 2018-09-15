@@ -3,6 +3,22 @@ const TEST_REGEX = "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|js?|tsx?|ts?)$"
 module.exports = {
   setupFiles: ["<rootDir>/jest.setup.js"],
   testRegex: TEST_REGEX,
+  globals: {
+    "ts-jest": {
+      "babelConfig": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ]
+      }
+    }
+  },
   transform: {
     "^.+\\.tsx?$": "ts-jest"
   },
