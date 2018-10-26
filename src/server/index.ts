@@ -43,7 +43,7 @@ app.prepare()
       } else if (pathname === '/get_geoip_info') {
         const geoipRes = geoipLite.lookup(req.ip);
         res.write(`ip: ${req.ip}\n`);
-        res.write(geoipRes);
+        res.write(geoipRes ? JSON.stringify(geoipRes) : 'nothing found');
         res.end();
       } else {
         handle(req, res, parsedUrl);
