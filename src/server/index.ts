@@ -41,8 +41,12 @@ app.prepare()
         res.write('cache cleared');
         res.end();
       } else if (pathname === '/get_geoip_info') {
-        const geoipRes = geoipLite.lookup(req.ip);
-        res.write(`ip: ${req.ip}\n`);
+        let ip = req.ip;
+        if (ip.includes('::ffff:')) {
+          ip = ip.split(':').reverse()[0];
+        }
+        const geoipRes = geoipLite.lookup(ip);
+        res.write(`ip: ${ip}\n`);
         res.write(geoipRes ? JSON.stringify(geoipRes) : 'nothing found');
         res.end();
       } else {
