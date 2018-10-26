@@ -4,6 +4,7 @@ import * as next from 'next';
 import * as spdy from 'spdy';
 import * as lruCache from 'lru-cache';
 import * as fs from 'fs';
+import * as geoipLite from 'geoip-lite';
 import { parse } from 'url';
 import { IncomingMessage, ServerResponse } from 'http';
 
@@ -38,6 +39,11 @@ app.prepare()
       } else if (pathname === '/clear_cache') {
         ssrCache.reset();
         res.write('cache cleared');
+        res.end();
+      } else if (pathname === '/get_geoip_info') {
+        const geoipRes = geoipLite.lookup(req.ip);
+        res.write(`ip: ${req.ip}\n`);
+        res.write(geoipRes);
         res.end();
       } else {
         handle(req, res, parsedUrl);
