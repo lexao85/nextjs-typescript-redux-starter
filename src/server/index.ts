@@ -41,7 +41,8 @@ app.prepare()
         res.write('cache cleared');
         res.end();
       } else if (pathname === '/get_geoip_info') {
-        let ip = req.ip;
+        const xForwardedFor = (req.headers['x-forwarded-for'] as string || '').replace(/:\d+$/, '');
+        let ip = xForwardedFor || req.connection.remoteAddress;
         if (ip.includes('::ffff:')) {
           ip = ip.split(':').reverse()[0];
         }
