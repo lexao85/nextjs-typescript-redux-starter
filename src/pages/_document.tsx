@@ -3,9 +3,13 @@ import Document, { Head, Main, NextScript } from 'next/document';
 
 import mainScss from '../styles/main.scss';
 
-export default class MyDocument extends Document {
+interface IDocumentProps {
+  svgSprite: string;
+}
+
+export default class MyDocument extends Document<IDocumentProps> {
   public static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
+    const initialProps: any = await Document.getInitialProps(ctx);
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
     const protocol = process.env.CONNECTION_TYPE === 'https' ? 'https' : 'http';
     const port = parseInt(process.env.PORT, 10) || 3000;
