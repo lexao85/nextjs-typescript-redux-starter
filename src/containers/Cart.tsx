@@ -12,7 +12,7 @@ interface IStateProps {
 }
 
 interface IDispatchProps {
-  onRemoveItem: (index: number) => () => void;
+  onRemoveItem: (index: number) => () => any;
   onRemoveAll: () => void;
 }
 

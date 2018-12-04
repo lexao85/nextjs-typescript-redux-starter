@@ -11,7 +11,7 @@ interface IStateProps {
 }
 
 interface IDispatchProps {
-  onBuy: (product: Product) => () => void;
+  onBuy: (product: Product) => () => any;
 }
 
 type IProductListProps = IStateProps & IDispatchProps;

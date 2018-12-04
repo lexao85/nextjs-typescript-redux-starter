@@ -15,7 +15,7 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev, dir: './src' });
 const handle = app.getRequestHandler();
 
-const ssrCache = lruCache({
+const ssrCache = new lruCache({
   max: 100,
   maxAge: 1000 * 60 * 60, // 1hour
 });
