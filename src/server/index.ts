@@ -1,8 +1,8 @@
 import * as compress from 'compression';
 import * as express from 'express';
 import * as next from 'next';
-import * as spdy from 'spdy';
 import * as lruCache from 'lru-cache';
+import * as spdy from 'spdy';
 import * as fs from 'fs';
 import * as geoipLite from 'geoip-lite';
 import { parse } from 'url';
@@ -58,10 +58,17 @@ app.prepare()
     if (config.certificateSettings) {
       process.env.CONNECTION_TYPE = 'https';
       const { crtPath, keyPath } = config.certificateSettings;
+      // The relevant issues are:
+      // https://github.com/spdy-http2/node-spdy/issues/350
+      // https://github.com/webpack/webpack-dev-server/issues/1592
       spdy.createServer(
         {
           cert: fs.readFileSync(crtPath),
           key: fs.readFileSync(keyPath),
+          spdy: {
+            // https://github.com/spdy-http2/node-spdy/issues/350
+            protocols: ['http/1.1'],
+          },
         },
         server)
         .listen(port, (err) => {

@@ -28,7 +28,6 @@ module.exports = withTypescript({
           {
             loader: "css-loader",
             options: {
-              minimize: true,
               sourceMap: false,
             },
           },
