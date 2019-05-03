@@ -1,5 +1,8 @@
 {
   "compileOnSave": false,
+  "exclude": [
+    "**/*.js"
+  ],
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
